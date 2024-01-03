@@ -31,4 +31,9 @@ li {
   font-size: 25px;
   list-style-type: none;
   margin-left: -150px;
+  
+}
+.btndlt{
+  align-items: center;
+  
 }

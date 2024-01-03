@@ -15,11 +15,17 @@ const Todo = () => {
             setInputvale('')
         }
     }
+
+    const deleteTodo = (id) => {
+        const updateTodos = todos.filter((todo) => todo.id !== id);
+        setTodos(updateTodos);
+    }
+
     return <>
 
         <div className="contaner">
             <h2>Todos - list </h2>
-            <input type="text" placeholder="Enter todo" value={inputvalue} onChange={(e) => {
+            <input type="text" placeholder="Enter todo" value={inputvalue}   onChange={(e) => {
                 setInputvale(e.target.value);
 
             }} ></input>
@@ -29,6 +35,9 @@ const Todo = () => {
                     <li key={todo}>
                         {todo.text}
 
+                        <button className="btndlt" onClick={() =>
+                            deleteTodo(todo.id)}>delete</button>
+                        <button className="btndlt">Edit</button>
                     </li>
                 ))}
             </ul>
